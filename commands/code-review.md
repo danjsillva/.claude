@@ -24,40 +24,27 @@ Generate PR description and detailed code review analysis in Portuguese.
 3. **Generate code review analysis** covering these sections:
 
    ### 1. Pontos Criticos
+
    List critical issues that MUST be addressed before merge:
    - Security vulnerabilities
    - Breaking changes
    - Data loss risks
    - Performance bottlenecks
    - Logic errors
-   If none found, state: "Nenhum ponto critico identificado."
+     If none found, state: "Nenhum ponto critico identificado."
 
    ### 2. Pontos de Atencao
+
    List concerns that should be reviewed:
    - Missing error handling
    - Missing tests
    - Incomplete implementations
    - Code smells
    - Potential bugs
-   If none found, state: "Nenhum ponto de atencao identificado."
+     If none found, state: "Nenhum ponto de atencao identificado."
 
-   ### 3. Pontos Positivos
-   Highlight good practices:
-   - Good architecture decisions
-   - Proper error handling
-   - Good test coverage
-   - Clean code patterns
-   - Documentation
+   ### 3. Metricas
 
-   ### 4. Sugestoes
-   Provide specific improvement suggestions:
-   - Refactoring opportunities
-   - Performance optimizations
-   - Better patterns
-   - Additional test cases
-   If none needed, state: "Nenhuma sugestao adicional."
-
-   ### 5. Metricas
    Provide quantitative assessment:
    - Files changed: [number]
    - Lines added: [number]
@@ -66,7 +53,8 @@ Generate PR description and detailed code review analysis in Portuguese.
    - Test coverage impact: [Improved/Maintained/Reduced/Unknown]
    - Risk level: [Low/Medium/High]
 
-   ### 6. Sinais de Codigo IA
+   ### 4. Sinais de Codigo IA
+
    Detect patterns typical of AI-generated code that often pass unnoticed in reviews:
    - **Unnecessary logs/comments**: forgotten console.log, obvious comments, generic TODO/FIXME
    - **Over-engineering**: premature abstractions, excessive error handling, overly defensive code
@@ -78,8 +66,8 @@ Generate PR description and detailed code review analysis in Portuguese.
    - **Shallow tests**: happy path only, mocks mirroring implementation, generic asserts
    - **Questionable dependencies**: libs for trivial tasks, outdated versions, duplication
    - **Missing business context**: technically correct but ignores business rules, wrong naming
-   If detected, list with file:line and correction suggestion.
-   If none found, state: "Nenhum sinal de codigo IA identificado."
+     If detected, list with file:line and correction suggestion.
+     If none found, state: "Nenhum sinal de codigo IA identificado."
 
 ## Output
 
@@ -103,15 +91,7 @@ Nenhum ponto critico identificado.
 - Missing error handling em X
 - Faltam testes para Y
 
-### 3. Pontos Positivos
-- Boa separacao de responsabilidades
-- Implementacao clara e concisa
-
-### 4. Sugestoes
-- Adicionar timeout no cache
-- Considerar rate limiting
-
-### 5. Metricas
+### 3. Metricas
 - Files changed: 5
 - Lines added: 120
 - Lines removed: 30
@@ -119,7 +99,7 @@ Nenhum ponto critico identificado.
 - Test coverage impact: Improved
 - Risk level: Low
 
-### 6. Sinais de Codigo IA
+### 4. Sinais de Codigo IA
 - **Over-engineering**: src/auth/middleware.ts:45 - try/catch desnecessario, AuthService ja lanca excecao tratada
 - **Codigo generico**: src/auth/constants.ts:12 - TTL hardcoded, mover para env
 ```
